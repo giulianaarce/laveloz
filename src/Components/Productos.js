@@ -1,16 +1,14 @@
 import React from 'react';
+import ProductoItem from './ProductoItem';
 
 
 export default class Productos extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      
-    }
-  }
+
   render() {
     return (
-      <h1>Productos</h1>
+      <div>
+        <ProductoItem/>
+      </div>
     )
   }
 }
