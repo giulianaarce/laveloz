@@ -6,7 +6,9 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-
+import Home from './Components/Home';
+import Productos from './Components/Productos';
+import Nosotros from './Components/Nosotros';
 
 export default class App extends React.Component {
   constructor() {
