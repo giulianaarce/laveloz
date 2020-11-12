@@ -9,6 +9,7 @@ import {
 import Home from './Components/Home';
 import Productos from './Components/Productos';
 import Nosotros from './Components/Nosotros';
+import NavBar from './Components/NavBar';
 
 export default class App extends React.Component {
   constructor() {
@@ -19,7 +20,15 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <h1>Proyecto Final</h1>
+      <Router>
+        <NavBar/>
+        <Switch>
+          <Route path="/home"><Home/></Route>
+          <Route path="/productos"><Productos/></Route>
+          <Route path="/nosotros"><Nosotros/></Route>
+          <Route path="*"><Redirect to="/home"></Redirect></Route>
+        </Switch>
+      </Router>
     )
   }
 }
