@@ -52,9 +52,11 @@ export default class Nosotros extends React.Component {
 
         </div>
         <ul class="list-group">Redes Sociales
-        
+
           <li class="list-group-item">Facebook</li>
+
           <li class="list-group-item">Twitter</li>
+          
           <li class="list-group-item">Instagram</li>
           
         </ul>

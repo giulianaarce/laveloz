@@ -21,6 +21,7 @@ export default class MapView extends React.Component{
                     Paraguay 954, Eldorado, Provincia de Misiones, Argentina
                 </Popup>
             </Marker>
+            
         </MapContainer>
         )
     }
