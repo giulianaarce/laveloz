@@ -18,13 +18,17 @@ export default class App extends React.Component {
       
     }
   }
+  categorias = (valor)=>{
+    const value = valor
+    console.log("click en ", value)
+  }
   render() {
     return (
       <Router>
         <NavBar/>
         <Switch>
           <Route path="/home"><Home/></Route>
-          <Route path="/productos"><Productos/></Route>
+          <Route path="/productos"><Productos selector={this.categorias}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>
         </Switch>
