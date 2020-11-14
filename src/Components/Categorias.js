@@ -19,16 +19,16 @@ export default class Categorias extends React.Component {
       <div>
           <ul className="nav flex-column">
             <li className="nav-item">
-              <button onClick={this.handlerButton} className="btn btn-outline-primary" value="boton">Dormitorio</button>
+              <button onClick={this.handlerButton} className="nav-link" value="boton">Dormitorio</button>
             </li>
             <li className="nav-item">
-              <button onClick={this.handlerButton} className="btn btn-outline-primary" value="Baño">Baño</button>
+              <button onClick={this.handlerButton} className="nav-link" value="Baño">Baño</button>
             </li>
             <li className="nav-item">
-              <button onClick={this.handlerButton} className="btn btn-outline-primary" value="Living">Living</button>
+              <button onClick={this.handlerButton} className="nav-link" value="Living">Living</button>
             </li>
             <li className="nav-item">
-              <button onClick={this.handlerButton} className="btn btn-outline-primary" value="Comedor">Comedor</button>
+              <button onClick={this.handlerButton} className="nav-link" value="Comedor">Comedor</button>
             </li>
           </ul>
       </div>

@@ -15,9 +15,16 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      
+      productos:""
     }
   }
+  componentDidMount(){
+    fetch("http://localhost:4200/api/productos")
+    .then((res)=>{return res.json()})
+    .then((json) => {
+      this.setState({ productos: json })
+      console.log(this.state.productos)
+    })}
   categorias = (valor)=>{
     const value = valor
     console.log("click en ", value)
@@ -28,7 +35,7 @@ export default class App extends React.Component {
         <NavBar/>
         <Switch>
           <Route path="/home"><Home/></Route>
-          <Route path="/productos"><Productos selector={this.categorias}/></Route>
+          <Route path="/productos"><Productos selector={this.categorias} productos={this.state.productos}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>
         </Switch>
