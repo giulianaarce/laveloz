@@ -15,7 +15,11 @@ export default class Home extends React.Component {
         <h1>La Veloz Carpintería</h1>
         <div>
         {
-          
+          this.props.imagenes.map((imagen)=>{
+            return(
+              <Carrusel imgUrl={imagen.imgUrl} texto={imagen.texto}></Carrusel>
+            );
+          })
         }
         </div>
         <Categorias></Categorias>

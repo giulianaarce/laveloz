@@ -28,7 +28,7 @@ export default class App extends React.Component {
     })
     // Imagenes del carrusel
     fetch("http://localhost:4200/api/images").then((res)=>{
-      res.json();
+      return res.json();
     }).then((img)=>{
       this.setState({imagenes: img});
       console.log(this.state.imagenes);
