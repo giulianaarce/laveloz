@@ -11,7 +11,7 @@ export default class ProductoItem extends React.Component {
                         <li className="list-group-item">{this.props.categoria}</li>
                         <li className="list-group-item">{this.props.descripcion}</li>
                         <li className="list-group-item">{this.props.color}</li>
-                        <li className="list-group-item">{this.props.codigo}</li>
+                        <li className="list-group-item">${this.props.precio}</li>
                     </ul>
                 </div>
                 <p className="card-text">{this.props.marketing}</p>
