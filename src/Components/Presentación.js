@@ -10,7 +10,7 @@ export default class Presentacion extends React.Component {
   }
   render() {
     return (
-      <div className="presentacion">
+      <div className="presentacion" style={{fontSize:20}}>
         La empresa cuenta con más de 20 años de experiencia en la fabricación y comercialización de todo tipo de muebles y aberturas, fabricados en maderas nativas o implantadas, dentro de la zona norte de la Provincia de Misiones.
 
         Una de las peculiaridades más importantes se centraliza en que para la obtención de sus productos se tienen en cuenta características artesanales, pero se pretende enfocar la producción hacia la industrialización.
