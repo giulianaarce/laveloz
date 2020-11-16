@@ -19,10 +19,6 @@ export default class Nosotros extends React.Component {
             <strong>LA VELOZ…Carpintería</strong>, es una micro PyME.
              Fue constituida en 1989, fundada como un emprendimiento familiar.
 
-             Actualmente, la empresa es una sociedad unipersonal, cuyo propietario es el Sr. Eleuterio Martínez Aquino. Para los fines legales, la misma se encuentra inscripta en la A.F.I.P. dentro del
-             Régimen Simplificado para Pequeños Contribuyentes
-            (Monotributo), como Autónomo (Trabajador Activo) cuyo CUIT es 23-92827109-9, clasificada dentro de la actividad de SERVICIOS/OFICIO, perteneciente a la categoría 0 (cero): No Agropecuario.
-
             La sede social está ubicada en Calle Paraguay Nº 600, Barrio Santo Domingo, Km. 7 ½ de la ciudad de Eldorado, departamento del mismo nombre, Provincia de Misiones, República Argentina.
 
             La empresa cuenta con más de 20 años de experiencia en la fabricación y comercialización de todo tipo de muebles y aberturas, fabricados en maderas nativas o implantadas, dentro de la zona norte de la Provincia de Misiones.
@@ -42,10 +38,6 @@ export default class Nosotros extends React.Component {
             Y ambicionamos para nuestro futuro:
 
            <strong> “Ser una empresa innovadora, con presencia nacional, reconocida por su continuo crecimiento, operando con seguridad y de forma responsable hacia las exigencias de nuestros clientes y la comunidad.”</strong>
-
-            A continuación presentamos nuestros productos para su consideración.
-
-            Esperamos poder entablar vínculos sólidos y duraderos con su prestigiosa empresa. Desde ya muchísimas gracias por prestarnos esta oportunidad. 
           </div>
 
           <Mapa />

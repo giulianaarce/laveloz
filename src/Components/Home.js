@@ -14,10 +14,10 @@ export default class Home extends React.Component {
     return (
       <>
         <h1>La Veloz Carpintería</h1>
+        <Categorias></Categorias>
         <div>
         <Carrusel></Carrusel>
         </div>
-        <Categorias></Categorias>
         <Presentacion></Presentacion>
       </> 
     )
