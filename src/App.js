@@ -15,7 +15,8 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      productos:""
+      productos:"", 
+      imagenes:""
     }
   }
   componentDidMount(){
@@ -24,17 +25,26 @@ export default class App extends React.Component {
     .then((json) => {
       this.setState({ productos: json })
       console.log(this.state.productos)
-    })}
+    })
+    // Imagenes del carrusel
+    fetch("http://localhost:4200/api/images").then((res)=>{
+      res.json();
+    }).then((img)=>{
+      this.setState({imagenes: img});
+      console.log(this.state.imagenes);
+      console.log(img);
+    })
+  }
   categorias = (valor)=>{
-    const value = valor
-    console.log("click en ", value)
+    const value = valor;
+    console.log("click en ", value);
   }
   render() {
     return (
       <Router>
         <NavBar/>
         <Switch>
-          <Route path="/home"><Home/></Route>
+          <Route path="/home"><Home imagenes={this.state.imagenes}/></Route>
           <Route path="/productos"><Productos selector={this.categorias} productos={this.state.productos}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>

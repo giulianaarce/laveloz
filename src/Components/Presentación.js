@@ -10,7 +10,7 @@ export default class Presentacion extends React.Component {
   }
   render() {
     return (
-      <h1>Presentacion</h1>
+      <h2>Presentacion</h2>
     )
   }
 }
