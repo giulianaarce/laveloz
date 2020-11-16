@@ -41,6 +41,7 @@ export default class App extends React.Component {
   }
   render() {
     return (
+      <>
       <Router>
         <NavBar/>
         <Switch>
@@ -50,6 +51,8 @@ export default class App extends React.Component {
           <Route path="*"><Redirect to="/home"></Redirect></Route>
         </Switch>
       </Router>
+      <footer>Facebok. Instagram. Twitter</footer>
+      </>
     )
   }
 }
