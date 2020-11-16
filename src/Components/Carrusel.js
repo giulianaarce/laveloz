@@ -24,7 +24,7 @@ export default class Carrusel extends React.Component {
             <img src="https://i.pinimg.com/originals/38/17/aa/3817aaf23b7dbdb31d74952401020185.jpg" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src="https://i.pinimg.com/originals/38/17/aa/3817aaf23b7dbdb31d74952401020185.jpg" className="d-block w-100" alt="..." />
+            <img src="https://geant.vteximg.com.br/arquivos/ids/209203-700-700/597088.jpg?v=636438539521800000" className="d-block w-100" alt="..." />
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
