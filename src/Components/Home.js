@@ -7,6 +7,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      
     }
   }
   render() {
@@ -14,13 +15,7 @@ export default class Home extends React.Component {
       <>
         <h1>La Veloz Carpintería</h1>
         <div>
-        {
-          this.props.imagenes.map((imagen)=>{
-            return(
-              <Carrusel imgUrl={imagen.imgUrl} texto={imagen.texto}></Carrusel>
-            );
-          })
-        }
+        <Carrusel></Carrusel>
         </div>
         <Categorias></Categorias>
         <Presentacion></Presentacion>
