@@ -10,8 +10,7 @@
  .contenedor-home{
   display: flex;
   justify-content: space-between;
+  flex-flow: wrap;
   
   
-}
-.contenedor-productos{
-}
+ }

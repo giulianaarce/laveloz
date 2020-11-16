@@ -8,8 +8,8 @@ export default class Productos extends React.Component {
   render() {
     return (
       <>
+          <Categorias/>
         <div className="contenedor-home">
-          <Categorias selector={this.props.selector} />
         {this.props.productos.map((producto) => {
           return (
             <div className="contenedor-productos">

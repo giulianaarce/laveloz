@@ -45,7 +45,7 @@ export default class App extends React.Component {
         <NavBar/>
         <Switch>
           <Route path="/home"><Home imagenes={this.state.imagenes}/></Route>
-          <Route path="/productos"><Productos selector={this.categorias} productos={this.state.productos}/></Route>
+          <Route path="/productos"><Productos productos={this.state.productos || []}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>
         </Switch>
