@@ -13,7 +13,10 @@ export default class Home extends React.Component {
   render() {
     return (
       <>
-        <h1>La Veloz Carpintería</h1>
+        <div className = "titulo-home" >
+          <h1>LA VELOZ CARPINTERIA</h1>
+        </div>
+        
         <Categorias></Categorias>
         <div>
         <Carrusel></Carrusel>
