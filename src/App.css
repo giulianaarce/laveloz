@@ -17,55 +17,15 @@ footer{
     font-style: inherit;
 }
 
-  
-
-.svg#whatsapp-msng-icon {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  opacity: 1;
-  overflow: hidden;
-
-
-
-    
-
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-.cresta-whatsapp-chat-box {
-  width: 60px;
-  height: 60px;
-  display: block;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 60px;
-  background: #25d366;
-  border-radius: 100%;
-  
-}
-
-
-
 .leaflet-container {
   width: 60vw;
   height: 60vh;
   border:0;
-  
  }
  .contenedor-home{
   display: flex;
   justify-content: space-between;
   flex-flow: wrap;
-  
-  
  }
  .titulo-home{
   
@@ -73,15 +33,11 @@ svg:not(:root) {
   font-size: 20px;
   font-family: 'Times New Roman';
   font-style:italic;
-
  }
 
  .card{
 
   border: 1px lightsalmon solid;
-
-
-
- }
+}
 
  
