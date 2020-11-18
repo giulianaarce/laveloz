@@ -15,16 +15,11 @@ footer{
     text-align: center;
     font-size :15px;
     font-style: inherit;
-  }
-
-  .cresta-whatsapp-chat-box svg#whatsapp-msng-icon {
-    width: 70px;
-    height: 70px;
-    top: 5px;
-    left: 5px;
 }
 
-.cresta-whatsapp-chat-box svg#whatsapp-msng-icon {
+  
+
+.svg#whatsapp-msng-icon {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -32,17 +27,11 @@ footer{
   left: 15px;
   opacity: 1;
   overflow: hidden;
-  -webkit-transition: opacity 160ms ease-in-out;
-  -moz-transition: opacity 160ms ease-in-out;
-  -o-transition: opacity 160ms ease-in-out;
-  transition: opacity 160ms ease-in-out;
-}
-svg {
-  overflow: hidden;
-  vertical-align: middle;
-}
-*, *::before, *::after {
-  box-sizing: border-box;
+
+
+
+    
+
 }
 
 svg:not(:root) {
@@ -60,9 +49,7 @@ svg:not(:root) {
   line-height: 60px;
   background: #25d366;
   border-radius: 100%;
-  -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,.3);
-  -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,.3);
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.3);
+  
 }
 
 
