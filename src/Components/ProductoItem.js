@@ -19,7 +19,7 @@ export default class ProductoItem extends React.Component {
     render() {
         return (
             <div className="card" style={{width: '18rem'}}>
-                <img src="https://previews.123rf.com/images/seamartini/seamartini1503/seamartini150300641/38118943-feliz-caracteres-de-muebles-de-dibujos-animados-sonriente-que-representan-sof%C3%A1s-tapizados-de-colores-a.jpg" className="card-img-top" alt="..." />
+                <img src={this.props.imgUrl} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
                     <p className="card-text">

@@ -28,7 +28,9 @@ export default class App extends React.Component {
     })
     fetch("http://localhost:4200/api/images")
     .then((res) => { return res.json(); })
-    .then((json) => { return this.setState({ images: json }) })
+    .then((json) => { 
+      console.log(json)
+      return this.setState({ images: json }) })
   }
   
   categorias = (valor)=>{

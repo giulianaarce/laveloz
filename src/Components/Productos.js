@@ -21,7 +21,8 @@ export default class Productos extends React.Component {
                 dimension={producto.dimension}
                 color={producto.color}
                 precio={producto.precio}
-                descuento={producto.descuento} />
+                descuento={producto.descuento} 
+                imgUrl={producto.imgUrl}/>
             </div>
           )
         })}
