@@ -4,22 +4,27 @@ import Categorias from './Categorias';
 import Presentacion from './Presentación';
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      
-    }
-  }
+  /*
+    
+  */
+ 
   render() {
     return (
-      <>
+      <div className="home">
         <h1>La Veloz Carpintería</h1>
-        <Categorias></Categorias>
-        <div>
-        <Carrusel></Carrusel>
+        <Categorias/>
+        <div className="carrusel">
+        {
+          this.props.images.map((image)=>{
+            return(
+            <div className="a">  
+              <Carrusel url={image.imgUrl}/>
+            </div>)
+          })
+        }
         </div>
-        <Presentacion></Presentacion>
-      </> 
+        <Presentacion/>
+      </div> 
     )
   }
 }

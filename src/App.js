@@ -26,15 +26,11 @@ export default class App extends React.Component {
       this.setState({ productos: json })
       console.log(this.state.productos)
     })
-    // Imagenes del carrusel
-    fetch("http://localhost:4200/api/images").then((res)=>{
-      return res.json();
-    }).then((img)=>{
-      this.setState({imagenes: img});
-      console.log(this.state.imagenes);
-      console.log(img);
-    })
+    fetch("http://localhost:4200/api/images")
+    .then((res) => { return res.json(); })
+    .then((json) => { return this.setState({ images: json }) })
   }
+  
   categorias = (valor)=>{
     const value = valor;
     console.log("click en ", value);
@@ -45,7 +41,7 @@ export default class App extends React.Component {
       <Router>
         <NavBar/>
         <Switch>
-          <Route path="/home"><Home imagenes={this.state.imagenes}/></Route>
+          <Route path="/home"><Home images={this.state.images || []}/></Route>
           <Route path="/productos"><Productos productos={this.state.productos || []}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>
