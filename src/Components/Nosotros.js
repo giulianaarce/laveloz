@@ -7,14 +7,18 @@ export default class Nosotros extends React.Component {
   constructor() {
     super()
     this.state = {
-      
+
     }
   }
   render() {
     return (
       <>
-        <h1> LA VELOZ </h1>
-        <h2>Carpinteria</h2>
+        <div className="title-nosotros">
+          <h1> LA VELOZ </h1>
+        </div>
+        <div className="subtitulo-nosotros">
+          <h2>Carpinteria</h2>
+        </div>
         <div class="card">
           <div class="card-body">
             <strong>LA VELOZ…Carpintería</strong>, es una micro PyME.
@@ -29,10 +33,11 @@ export default class Nosotros extends React.Component {
 
             Las características artesanales manifiestan gran interés por los detalles y culminaciones logradas, por el trabajo intensivo y el conocimiento específico de un determinado oficio o arte como lo
             es la carpintería.
-            
+
             Por otra parte, las características industriales tienen en cuenta atributos vinculados con el suministro de materias primas, medios de producción, medios de distribución, comercialización, y otros aspectos referidos a escalas muy diferentes. Aquí se hallan agrupadas ambas características con el fin de obtener productos reconocidos por sus detalles pero cimentada en el conocimiento científico y técnico.
 
-            <h1>Nuestra MISION:</h1>
+              <h3>NUESTRA MISION:</h3>
+          
 
             <strong>“Satisfacer las necesidades y expectativas de nuestros clientes ofreciéndoles muebles integrales dotados de alta calidad y conceptos innovadores en diseño, relacionados a la multifuncionalidad y la flexibilidad, con el fin de generar ambientes confortables.”</strong>
 
@@ -41,14 +46,16 @@ export default class Nosotros extends React.Component {
            <strong> “Ser una empresa innovadora, con presencia nacional, reconocida por su continuo crecimiento, operando con seguridad y de forma responsable hacia las exigencias de nuestros clientes y la comunidad.”</strong>
           </div>
 
+
+
           <Mapa />
 
         </div>
         <ul class="list-group">Redes Sociales
 
         <li class="list-group-item">Facebook</li>
-        <li class="list-group-item">Twitter</li>
-        <li class="list-group-item">Instagram</li>
+          <li class="list-group-item">Twitter</li>
+          <li class="list-group-item">Instagram</li>
         </ul>
 
       </>
