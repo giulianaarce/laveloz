@@ -80,12 +80,19 @@ export default class Nosotros extends React.Component {
 
 
         </div>
-        <ul class="list-group">Redes Sociales
-
-        <li class="list-group-item">Facebook</li>
-          <li class="list-group-item">Twitter</li>
-          <li class="list-group-item">Instagram</li>
-        </ul>
+        <h1>Dejanos tu consulta</h1>
+          <form>
+            <div className="form-group" style={{width: '80rem'}}>
+              <input type="text" class="form-control" placeholder="Ingrese su nombre"  required/>
+            </div>
+            <div className="form-group" style={{width: '80rem'}}>
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su email"  />
+            </div>
+            <div className="form-group" style={{width: '80rem'}}>
+              <textarea type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  />
+            </div>
+            <button type="submit" className="btn btn-primary">Enviar</button>
+          </form>
 
       </>
     )
