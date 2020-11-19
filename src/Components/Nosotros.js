@@ -46,9 +46,38 @@ export default class Nosotros extends React.Component {
            <strong> “Ser una empresa innovadora, con presencia nacional, reconocida por su continuo crecimiento, operando con seguridad y de forma responsable hacia las exigencias de nuestros clientes y la comunidad.”</strong>
           </div>
 
-
-
           <Mapa />
+
+          <div className="contactos">
+            {this.props.sucursales.map((tienda)=>{
+              return(<div className="card mb-3" style={{maxWidth: '540px'}}>
+                <div className="row no-gutters">
+                  <div className="col-md-4">
+                    <img src={tienda.imgUrl} className="card-img" alt="ImagenTienda" />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">{tienda.nombre}</h5>
+                      <p className="card-text">
+                          {tienda.direccion}
+                      </p>
+                      <p className="card-text">
+                          {tienda.horario}
+                      </p>
+                      <p className="card-text">
+                        {tienda.telefono}
+                      </p>
+                      <p className="card-text">
+                        {tienda.email}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>)
+            })}
+          
+          </div>
+
 
         </div>
         <ul class="list-group">Redes Sociales
