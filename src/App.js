@@ -78,8 +78,8 @@ export default class App extends React.Component {
       .then((res) => { return res.json() })
       .then((json) => {
         console.log(json)
-         this.setState({ categoria: json })
-          console.log(this.state.categoria)
+         this.setState({ productos: json })
+          console.log(this.state.productos)
         })
   }
   render() {
@@ -90,7 +90,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
-            <Route path="/nosotros"><Nosotros sucursales={this.props.sucursales || []} /></Route>
+            <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>

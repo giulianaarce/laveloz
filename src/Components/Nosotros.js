@@ -37,7 +37,7 @@ export default class Nosotros extends React.Component {
             Por otra parte, las características industriales tienen en cuenta atributos vinculados con el suministro de materias primas, medios de producción, medios de distribución, comercialización, y otros aspectos referidos a escalas muy diferentes. Aquí se hallan agrupadas ambas características con el fin de obtener productos reconocidos por sus detalles pero cimentada en el conocimiento científico y técnico.
 
               <h3>NUESTRA MISION:</h3>
-          
+
 
             <strong>“Satisfacer las necesidades y expectativas de nuestros clientes ofreciéndoles muebles integrales dotados de alta calidad y conceptos innovadores en diseño, relacionados a la multifuncionalidad y la flexibilidad, con el fin de generar ambientes confortables.”</strong>
 
@@ -49,8 +49,8 @@ export default class Nosotros extends React.Component {
           <Mapa />
 
           <div className="contactos">
-            {this.props.sucursales.map((tienda)=>{
-              return(<div className="card mb-3" style={{maxWidth: '540px'}}>
+            {this.props.sucursales.map((tienda) => {
+              return (<div className="card mb-3" style={{ maxWidth: '540px' }}>
                 <div className="row no-gutters">
                   <div className="col-md-4">
                     <img src={tienda.imgUrl} className="card-img" alt="ImagenTienda" />
@@ -59,10 +59,10 @@ export default class Nosotros extends React.Component {
                     <div className="card-body">
                       <h5 className="card-title">{tienda.nombre}</h5>
                       <p className="card-text">
-                          {tienda.direccion}
+                        {tienda.direccion}
                       </p>
                       <p className="card-text">
-                          {tienda.horario}
+                        {tienda.horario}
                       </p>
                       <p className="card-text">
                         {tienda.telefono}
@@ -75,7 +75,7 @@ export default class Nosotros extends React.Component {
                 </div>
               </div>)
             })}
-          
+
           </div>
 
 
