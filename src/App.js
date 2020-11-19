@@ -19,7 +19,8 @@ export default class App extends React.Component {
       imagenes: "",
       categoria: "",
       textoMarketing:"",
-      productosFav:""
+      productosFav:"",
+      sucursales:""
     }
   }
   componentDidMount() {
@@ -60,12 +61,12 @@ export default class App extends React.Component {
       })
 
       //Tiendas 
-      fetch("http://localhost:4200/api/sugeridos")
+      fetch("http://localhost:4200/api/sucursales")
       .then((res)=>{return res.json()})
       .then((json) => {
         if(json !== undefined){
-        this.setState({ productosFav: json })
-        console.log(this.state.productosFav)}
+        this.setState({ sucursales: json })
+        console.log(this.state.sucursales)}
       })
   }
 
@@ -88,7 +89,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
-            <Route path="/nosotros"><Nosotros /></Route>
+            <Route path="/nosotros"><Nosotros sucursales={this.props.sucursales} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>
