@@ -9,7 +9,7 @@ export default class Carrusel extends React.Component {
           {
               this.props.images.map((image,i)=>{
                 return(
-                  <li data-target="#carouselExampleControls" data-slide-to={i} className={`${i===0? "active":""}`} />
+                  <li data-target="#carouselExampleIndicators" data-slide-to={i} className={`${i===0? "active":""}`} />
                 )
               })}
             </ol>
@@ -24,11 +24,11 @@ export default class Carrusel extends React.Component {
                   })
                 }
         </div>
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true" />
           <span className="sr-only">Previous</span>
         </a>
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true" />
           <span className="sr-only">Next</span>
         </a>
