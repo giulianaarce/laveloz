@@ -30,7 +30,11 @@ export default class App extends React.Component {
     .then((res) => { return res.json(); })
     .then((json) => { 
       console.log(json)
-      return this.setState({ images: json }) })
+      if(json !== undefined){
+        this.setState({ imagenes: json }) 
+        return console.log(this.state.imagenes)
+      }
+      })
   }
   
   categorias = (valor)=>{
@@ -43,7 +47,7 @@ export default class App extends React.Component {
       <Router>
         <NavBar/>
         <Switch>
-          <Route path="/home"><Home images={this.state.images || []}/></Route>
+          <Route path="/home"><Home images={this.state.imagenes || []}/></Route>
           <Route path="/productos"><Productos productos={this.state.productos || []}/></Route>
           <Route path="/nosotros"><Nosotros/></Route>
           <Route path="*"><Redirect to="/home"></Redirect></Route>
