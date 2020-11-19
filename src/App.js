@@ -67,8 +67,8 @@ export default class App extends React.Component {
       .then((res) => { return res.json() })
       .then((json) => {
         console.log(json)
-         this.setState({ categoria: json })
-          console.log(this.state.categoria)
+         this.setState({ productos: json })
+          console.log(this.state.productos)
         })
   }
   render() {
