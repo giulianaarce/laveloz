@@ -58,6 +58,15 @@ export default class App extends React.Component {
         this.setState({ productosFav: json })
         console.log(this.state.productosFav)}
       })
+
+      //Tiendas 
+      fetch("http://localhost:4200/api/sugeridos")
+      .then((res)=>{return res.json()})
+      .then((json) => {
+        if(json !== undefined){
+        this.setState({ productosFav: json })
+        console.log(this.state.productosFav)}
+      })
   }
 
   categorias = (valor) => {
@@ -67,8 +76,8 @@ export default class App extends React.Component {
       .then((res) => { return res.json() })
       .then((json) => {
         console.log(json)
-         this.setState({ productos: json })
-          console.log(this.state.productos)
+         this.setState({ categoria: json })
+          console.log(this.state.categoria)
         })
   }
   render() {

@@ -5,7 +5,16 @@ import Presentacion from './Presentación';
 import ProductoFav from './ProductoFav'
 
 export default class Home extends React.Component {
- 
+  constructor(props){
+    super(props)
+  }
+  handleNameChange = (e)=>{
+    this.setState({name: e.target.value});
+}
+handleEmailChange = (e)=>{
+    this.setState({email: e.target.value})
+}
+
   render() {
     return (
       <div className="home">
@@ -18,11 +27,23 @@ export default class Home extends React.Component {
         </div>
         <Presentacion presentacion={this.props.textoM}/>
         
-        <h2 style={{padding: "50px"}}>Productos destacados de la semana</h2>
+        <h2 style={{padding: "50px"}} className = "titulo-home">Productos destacados de la semana</h2>
         <div className="contenedor-home">
             {this.props.productosFav.map((producto)=>{
               return(<ProductoFav imgUrl={producto.imgUrl} title={producto.producto} precio={producto.precio} descuento={producto.descuento}/>)
             })}
+        </div>
+        <div className="contacto" style={{paddingTop:"30px"}}>
+          <p style={{fontSize:30}}>Entérate primero, recibí las novedades y promociones en tu correo.</p>
+          <form>
+            <div className="form-group" style={{width: '80rem'}}>
+              <input type="text" class="form-control" placeholder="Ingrese su nombre" onChange={this.handleNameChange} required/>
+            </div>
+            <div className="form-group" style={{width: '80rem'}}>
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su email" onChange={this.handleEmailChange} />
+            </div>
+            <button type="submit" className="btn btn-primary">Enviar</button>
+          </form>
         </div>
       </div> 
     )
