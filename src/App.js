@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import Productos from './Components/Productos';
 import Nosotros from './Components/Nosotros';
 import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
 
 export default class App extends React.Component {
   constructor() {
@@ -93,7 +94,7 @@ export default class App extends React.Component {
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>
-        <footer>Facebook. Instagram. Twitter</footer>
+        <Footer/>
       </>
     )
   }
