@@ -84,3 +84,19 @@
 
   color: rgb(241, 176, 133);
 }
+.nav-btn{
+
+  
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: rgb(150, 112, 73);
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+  
+  
+ 
+  
+ 
+
+  
+}
