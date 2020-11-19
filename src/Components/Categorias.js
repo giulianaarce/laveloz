@@ -10,19 +10,19 @@ export default class Categorias extends React.Component {
   }
   handlerButton = (e) => {
     const categoria = e.target.value
-    this.props.selector(categoria)
+    this.props.categorias(categoria)
   }
 
   render() {
     return (
       <div>
         <nav className="nav" style={{paddingBottom:20}}>
-            <a className="nav-link active" href="#">Todos</a>
-            <a className="nav-link active" href="#">Comedor</a>
-            <a className="nav-link active" href="#">Dormitorio</a>
-            <a className="nav-link active" href="#">Living</a>
-            <a className="nav-link active" href="#">Baño</a>
-            <a className="nav-link active" href="#">Cocina</a>
+            <button onClick={this.handlerButton} value="Todos">Todos</button>
+            <button onClick={this.handlerButton} value="Comedor">Comedor</button>
+            <button onClick={this.handlerButton} value="Dormitorio">Dormitorio</button>
+            <button onClick={this.handlerButton} value="Living">Living</button>
+            <button onClick={this.handlerButton} value="Baño">Baño</button>
+            <button onClick={this.handlerButton} value="Cocina">Cocina</button>
         </nav>
       </div>
     )

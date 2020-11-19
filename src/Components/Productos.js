@@ -8,7 +8,7 @@ export default class Productos extends React.Component {
   render() {
     return (
       <>
-          <Categorias/>
+          <Categorias categorias={this.props.categorias}/>
         <div className="contenedor-home">
         {this.props.productos.map((producto) => {
           return (
