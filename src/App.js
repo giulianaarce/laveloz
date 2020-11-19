@@ -18,7 +18,8 @@ export default class App extends React.Component {
       productos: "",
       imagenes: "",
       categoria: "",
-      textoMarketing:""
+      textoMarketing:"",
+      productosFav:""
     }
   }
   componentDidMount() {
@@ -48,6 +49,15 @@ export default class App extends React.Component {
         this.setState({ textoMarketing: json })
         console.log(this.state.textoMarketing)}
       })
+
+      //Productos favoritos
+      fetch("http://localhost:4200/api/sugeridos")
+      .then((res)=>{return res.json()})
+      .then((json) => {
+        if(json !== undefined){
+        this.setState({ productosFav: json })
+        console.log(this.state.productosFav)}
+      })
   }
 
   categorias = (valor) => {
@@ -67,7 +77,7 @@ export default class App extends React.Component {
         <Router>
           <NavBar />
           <Switch>
-            <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []}/></Route>
+            <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
             <Route path="/nosotros"><Nosotros /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
