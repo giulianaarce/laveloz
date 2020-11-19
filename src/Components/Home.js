@@ -4,9 +4,6 @@ import Categorias from './Categorias';
 import Presentacion from './Presentación';
 
 export default class Home extends React.Component {
-  /*
-    
-  */
  
   render() {
     return (
@@ -18,7 +15,7 @@ export default class Home extends React.Component {
         <div className="carrusel"> 
                 <Carrusel images={this.props.images}/> 
         </div>
-        <Presentacion/>
+        <Presentacion presentacion={this.props.textoM}/>
       </div> 
     )
   }

@@ -17,24 +17,36 @@ export default class App extends React.Component {
     this.state = {
       productos: "",
       imagenes: "",
-      categoria: ""
+      categoria: "",
+      textoMarketing:""
     }
   }
   componentDidMount() {
+    //Productos
     fetch("http://localhost:4200/api/productos")
       .then((res) => { return res.json() })
       .then((json) => {
         this.setState({ productos: json })
         console.log(this.state.productos)
       })
+    //Imagenes del carrusel
     fetch("http://localhost:4200/api/images")
-      .then((res) => { return res.json(); })
+    .then((res) => { return res.json(); })
+    .then((json) => { 
+      console.log(json)
+      if(json !== undefined){
+        this.setState({ imagenes: json }) 
+        return console.log(this.state.imagenes)
+      }
+      })
+
+      //Texto de Marketing
+      fetch("http://localhost:4200/api/textMarketing")
+      .then((res)=>{return res.json()})
       .then((json) => {
-        console.log(json)
-        if (json !== undefined) {
-          this.setState({ imagenes: json })
-          return console.log(this.state.imagenes)
-        }
+        if(json !== undefined){
+        this.setState({ textoMarketing: json })
+        console.log(this.state.textoMarketing)}
       })
   }
 
@@ -55,13 +67,13 @@ export default class App extends React.Component {
         <Router>
           <NavBar />
           <Switch>
-            <Route path="/home"><Home images={this.state.imagenes || []} /></Route>
+            <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
             <Route path="/nosotros"><Nosotros /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>
-        <footer>Facebok. Instagram. Twitter</footer>
+        <footer>Facebook. Instagram. Twitter</footer>
       </>
     )
   }
