@@ -4,12 +4,31 @@ import Mapa from './Mapa';
 
 
 export default class Nosotros extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-
+      nameCon: "",
+      emailCon: "",
+      messageCon: ""
     }
   }
+  handleName = (e)=>{
+    this.setState({nameCon: e.target.value});
+  }
+  handleEmail = (e)=>{
+      this.setState({emailCon: e.target.value})
+  }
+  handlePhone = (e)=>{
+    this.setState({phoneCon: e.target.value})
+  }
+  handleMessage = (e)=>{
+      this.setState({messageCon: e.target.value})
+  }
+  handleClick = ()=>{
+      const {nameCon, emailCon, messageCon, phoneCon} = this.state;
+      this.props.enviarContacto(nameCon, emailCon, messageCon, phoneCon);
+  }
+
   render() {
     return (
       <>
@@ -78,21 +97,25 @@ export default class Nosotros extends React.Component {
 
           </div>
 
-
-        </div>
-        <h1>Dejanos tu consulta</h1>
+          <h1>Dejanos tu consulta</h1>
           <form>
             <div className="form-group" style={{width: '80rem'}}>
-              <input type="text" class="form-control" placeholder="Ingrese su nombre"  required/>
+              <input type="text" class="form-control" placeholder="Ingrese su nombre" onChange={this.handleName} required/>
             </div>
             <div className="form-group" style={{width: '80rem'}}>
-              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su email"  />
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su email" onChange={this.handleEmail} required/>
             </div>
             <div className="form-group" style={{width: '80rem'}}>
-              <textarea type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  />
+                            <input type="number" className="form-control" id="phone" onChange={this.handlePhone} required/>
+                        </div>
+            <div className="form-group" style={{width: '80rem'}}>
+              <textarea className="form-control" id="message"  rows={3} defaultValue={""} onChange={this.handleMessage} required/>
             </div>
-            <button type="submit" className="btn btn-primary">Enviar</button>
+            <button type="submit" className="btn btn-primary" onClick={this.handleClick}>Enviar</button>
           </form>
+
+        </div>
+        
 
       </>
     )

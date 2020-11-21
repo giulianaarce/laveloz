@@ -82,15 +82,53 @@ export default class App extends React.Component {
           console.log(this.state.productos)
         })
   }
+
+  //Formulario de Home
+  novedadesEmail = (name, email)=> {
+    const FORMHOME = {
+      nameNov: name,
+      emailNov: email
+    }
+    if(name !== "" || email !== ""){
+      fetch('http://localhost:4200/api/email', {
+        method: 'POST',
+        body: JSON.stringify(FORMHOME),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then((res)=> {return res.json()})
+      .then((json)=> { return console.log(json);})
+
+    }
+  }
+
+  //Formulario de contacto en "Nosotros"
+  enviarContacto = (nameCon, emailCon, messageCon, phoneCon) =>{
+    const FORMCONTACTO = {
+      name: nameCon, 
+      email: emailCon, 
+      phone: phoneCon,
+      message: messageCon
+    }
+    if(nameCon !== "" || emailCon !== "" || messageCon !== "" || phoneCon !== ""){
+      fetch('http://localhost:4200/api/contactForm/', {
+        method: 'POST',
+        body: JSON.stringify(FORMCONTACTO),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then((res)=> {return res.json()})
+      .then((json)=> { return console.log(json);})
+
+    }
+  }
   render() {
     return (
       <>
         <Router>
           <NavBar />
           <Switch>
-            <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []}/></Route>
+            <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []} novedadesEmail={this.novedadesEmail}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
-            <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} /></Route>
+            <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} enviarContacto={this.enviarContacto} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>
