@@ -86,17 +86,23 @@
 }
 .nav-btn{
 
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(233, 179, 125);
   
-    padding: .375rem .75rem;
-    border-radius: .25rem;
-    background-color: rgb(150, 112, 73);
-    color: #fff;
-    transition: background-color .15s ease-in-out;
-  
-  
- 
-  
- 
+  transition-timing-function: .15s ease-in-out;
+}
 
-  
+button{
+    margin:15px;
+    padding: 15px;
+    border-radius:26px;
+    border-bottom: 5px double;
+    font-family: Verdana;
+    font-size: 18px;
+    border-color: black;
+    color: darksalmon;
+    background-color: cornsilk;
+    
 }
