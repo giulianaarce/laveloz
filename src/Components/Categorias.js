@@ -15,7 +15,7 @@ export default class Categorias extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="categorias">
         <nav className="nav-btn" style={{paddingBottom:30}}>
             <button onClick={this.handlerButton} value="">Todos</button>
             <button onClick={this.handlerButton} value="Comedor">Comedor</button>
