@@ -125,6 +125,7 @@ export default class App extends React.Component {
 
   id_producto = (valor)=>{
     const value = valor
+    console.log("Id desde app",value)
     this.setState({producto_id:value})
 
   }
@@ -139,7 +140,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []} novedadesEmail={this.novedadesEmail}/></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} id_producto={this.id_producto} /></Route>
-            <Route path ="producto-detalle"><ProductoDetalle/></Route>
+            <Route path ="/producto-detalle"><ProductoDetalle producto_id={this.state.producto_id}/></Route>
             <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} enviarContacto={this.enviarContacto} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>

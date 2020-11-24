@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Categorias from './Categorias';
-import ProductoItem from './ProductoItem';
+
 
 
 export default class Productos extends React.Component {
-handler_id=()=>{
-  this.props.id_producto()
+  handler_id=(e)=>{
+    let id = e.target.value
+    console.log("Id", id)
+    this.props.id_producto(id)
 }
   render() {
     return (
@@ -15,18 +18,19 @@ handler_id=()=>{
         {this.props.productos.map((producto) => {
           return (
             <div className="contenedor-productos">
-              <ProductoItem title={producto.producto}
-                categoria={producto.categoria}
-                codigo={producto.codigo}
-                descripcion={producto.descripcion}
-                marketing={producto.marketing}
-                dimension={producto.dimension}
-                color={producto.color}
-                precio={producto.precio}
-                descuento={producto.descuento} 
-                imgUrl={producto.imgUrl}
-                id={producto._id}
-                id_producto={this.handler_id}/>
+              <div className="card" style={{width: '18rem'}}>
+                <img src={producto.imgUrl} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{producto.producto}</h5>
+                    <p className="card-text">
+                        {producto.descripcion}.{producto.marketing}<br/>
+                        Colores:{producto.color}<br/>
+                        Dimensiones:{producto.dimension}<br/>
+                        <strong>${producto.precio}</strong>
+                    </p>
+                    <Link to="/producto-detalle"><button value={producto._id} onClick={this.handler_id}></button></Link>
+                </div>
+            </div>
             </div>
           )
         })}
