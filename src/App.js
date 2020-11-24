@@ -11,7 +11,7 @@ import Productos from './Components/Productos';
 import Nosotros from './Components/Nosotros';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
-
+import ProductoDetalle from './Components/ProductoDetalle'
 export default class App extends React.Component {
   constructor() {
     super()
@@ -21,7 +21,8 @@ export default class App extends React.Component {
       categoria: "",
       textoMarketing:"",
       productosFav:"",
-      sucursales:""
+      sucursales:"",
+      producto_id:""
     }
   }
   componentDidMount() {
@@ -120,6 +121,16 @@ export default class App extends React.Component {
 
     }
   }
+  //Detalle de producto
+
+  id_producto = (valor)=>{
+    const value = valor
+    this.setState({producto_id:value})
+
+  }
+  
+
+
   render() {
     return (
       <>
@@ -127,7 +138,8 @@ export default class App extends React.Component {
           <NavBar />
           <Switch>
             <Route path="/home"><Home images={this.state.imagenes || []}  textoM ={this.state.textoMarketing || []} productosFav={this.state.productosFav || []} novedadesEmail={this.novedadesEmail}/></Route>
-            <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} /></Route>
+            <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.categorias} id_producto={this.id_producto} /></Route>
+            <Route path ="producto-detalle"><ProductoDetalle/></Route>
             <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} enviarContacto={this.enviarContacto} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>

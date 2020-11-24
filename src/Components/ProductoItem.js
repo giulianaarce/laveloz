@@ -1,6 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class ProductoItem extends React.Component {
+    handler_id=(e)=>{
+        let id = e.target.value
+        console.log("Id desde ProductItem", id)
+        this.props.id_producto(id)
+    }
+    
     render() {
         return (
             <div className="card" style={{width: '18rem'}}>
@@ -13,7 +20,7 @@ export default class ProductoItem extends React.Component {
                         Dimensiones:{this.props.dimension}<br/>
                         <strong>${this.props.precio}</strong>
                     </p>
-                    <a href="#" className="btn btn-primary" color="success">Comprar</a>
+                    <Link to="/producto-detalle"><button value={this.props.id} onClick={this.handler_id}></button></Link>
                 </div>
             </div>
         )

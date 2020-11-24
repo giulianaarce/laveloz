@@ -4,7 +4,9 @@ import ProductoItem from './ProductoItem';
 
 
 export default class Productos extends React.Component {
-
+handler_id=()=>{
+  this.props.id_producto()
+}
   render() {
     return (
       <>
@@ -22,7 +24,9 @@ export default class Productos extends React.Component {
                 color={producto.color}
                 precio={producto.precio}
                 descuento={producto.descuento} 
-                imgUrl={producto.imgUrl}/>
+                imgUrl={producto.imgUrl}
+                id={producto._id}
+                id_producto={this.handler_id}/>
             </div>
           )
         })}
