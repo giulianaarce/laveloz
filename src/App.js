@@ -11,7 +11,9 @@ import Productos from './Components/Productos';
 import Nosotros from './Components/Nosotros';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
-import ProductoDetalle from './Components/ProductoDetalle'
+import ProductoDetalle from './Components/ProductoDetalle';
+import Whatsapp from './Components/Whatsapp';
+
 export default class App extends React.Component {
   constructor() {
     super()
@@ -145,6 +147,7 @@ export default class App extends React.Component {
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
         </Router>
+        <Whatsapp/>
         <Footer/>
       </>
     )
