@@ -29,10 +29,6 @@ export default class Productos extends React.Component {
     return (
       <>
         <Categorias categorias={this.props.categorias} sendCat={this.props.categ} />
-        <div>
-          <input className="form-control" type="text" onChange={this.handleSearch} />
-          <button className="btn btn-light" onClick={this.handleButton}>Buscar</button>
-        </div>
         <div className="contenedor-home">
           {this.props.productos.map((producto) => {
             if (producto.descuento) {
