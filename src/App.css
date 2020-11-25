@@ -60,7 +60,7 @@
 
 .contenedor-home{
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   flex-flow: wrap;
 }
 
@@ -77,8 +77,9 @@
 
 .card{
 
-  border: 1px lightsalmon solid;
+  border: 1px lightsalmon dotted;
   background-color: ivory;
+ 
 }
 
 
