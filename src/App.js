@@ -35,7 +35,7 @@ export default class App extends React.Component {
     fetch("http://localhost:4200/api/productos")
       .then((res) => { return res.json() })
       .then((json) => {
-        this.setState({ productos: json })
+        //this.setState({ productos: json })
         console.log(this.state.productos)
         const orden = this.state.productos.sort((a, b)=>{
           return (a.precio - b.precio)
