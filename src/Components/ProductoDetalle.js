@@ -20,21 +20,20 @@ export default class ProductoDetalle extends React.Component {
     render() {
         return (
 
-            <div style={{ marginTop: 100, marginLeft: 400, paddingRight: 100 }}>
-                <div className=" mb-3" style={{ maxWidth: '540px' }}>
-                    <div className="row no-gutters">
-                        <div className="col-md-4">
-                            <img src={this.state.productos.imgUrl} className="card-img" />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">{this.state.productos.producto}</h5>
-                                <p className="card-text">{this.state.productos.descripcion} / {this.state.productos.dimension}</p>
-                                <p className="card-text">{this.state.productos.pago} / {this.state.productos.precio}</p>
-                                <button>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
+                <div>
+                    <img style={{ width: 350, marginTop: 100 }} src={this.state.productos.imgUrl} />
+                </div>
+                <div style={{ marginTop: 100, marginRight: 700 }}>
+                    <h1>{this.state.productos.producto}</h1>
+                    <ul>
+                        <li className="list-group-item">Medidas: {this.state.productos.dimension}</li>
+                        <li className="list-group-item">Color: {this.state.productos.color}</li>
+                        <li className="list-group-item">{this.state.productos.descripcion}</li>
+                        <li className="list-group-item">Precio: ${this.state.productos.precio}</li>
+                        <li className="list-group-item">Forma de pago: {this.state.productos.pago}</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary">Compra</button>
                 </div>
 
             </div>

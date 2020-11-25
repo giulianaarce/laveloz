@@ -13,7 +13,7 @@ export default class Productos extends React.Component {
   render() {
     return (
       <>
-          <Categorias categorias={this.props.categorias}/>
+          <Categorias categorias={this.props.categorias} sendCat={this.props.categ}/>
         <div className="contenedor-home">
         {this.props.productos.map((producto) => {
           return (
@@ -28,7 +28,7 @@ export default class Productos extends React.Component {
                         Dimensiones:{producto.dimension}<br/>
                         <strong>${producto.precio}</strong>
                     </p>
-                    <Link to="/producto-detalle"><button value={producto._id} onClick={this.handler_id}></button></Link>
+                    <Link to="/producto-detalle"><button value={producto._id} onClick={this.handler_id}>Detalle</button></Link>
                 </div>
             </div>
             </div>

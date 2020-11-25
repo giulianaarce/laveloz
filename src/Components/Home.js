@@ -31,7 +31,7 @@ export default class Home extends React.Component {
           <h1>LA VELOZ CARPINTERIA</h1>
         </div>
 
-        <Categorias/>
+        <Categorias categorias={this.props.categorias} sendCat={this.props.categ}/>
 
         <div className="carrusel"> 
                 <Carrusel images={this.props.images}/> 
