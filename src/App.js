@@ -40,7 +40,7 @@ export default class App extends React.Component {
         const orden = this.state.productos.sort((a, b)=>{
           return (a.precio - b.precio)
         })
-        this.setState({productosOrdenados: orden})
+        this.setState({productos: orden})
       })
     //Imagenes del carrusel
     fetch("http://localhost:4200/api/images")
