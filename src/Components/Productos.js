@@ -21,7 +21,7 @@ export default class Productos extends React.Component {
             mozborderradius: '35px 0px 35px 0px',
             webkitborderradius: '35px 0px 35px 0px',
             border: '2px solid #5878ca',
-            aligncontent: 'space-between',
+            justifycontent: 'space-around',
             flexGrow:'5px',
             
 
