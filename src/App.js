@@ -13,7 +13,6 @@ import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import ProductoDetalle from './Components/ProductoDetalle';
 import Whatsapp from './Components/Whatsapp';
-import ProductoCategoria from './Components/ProductCategoria';
 
 export default class App extends React.Component {
   constructor() {
@@ -157,7 +156,6 @@ export default class App extends React.Component {
             <Route path="/home"><Home images={this.state.imagenes || []} textoM={this.state.textoMarketing || []} productosFav={this.state.productosFav || []} novedadesEmail={this.novedadesEmail} categorias={this.state.categorias || []} categ={this.categorias} /></Route>
             <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.state.categorias || []} id_producto={this.id_producto} categ={this.categorias} /></Route>
             <Route path="/producto-detalle"><ProductoDetalle producto_id={this.state.producto_id} /></Route>
-            <Route path="/categorias"><ProductoCategoria categorias={this.state.categorias}/></Route>
             <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} enviarContacto={this.enviarContacto} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
           </Switch>
