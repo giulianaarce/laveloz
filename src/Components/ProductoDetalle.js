@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { FaRegHeart } from "react-icons/fa"; 
+import { FaHeart } from "react-icons/fa"; 
+
 
 export default class ProductoDetalle extends React.Component {
     constructor() {
@@ -8,6 +11,9 @@ export default class ProductoDetalle extends React.Component {
             init_point:""
         }
     }
+    handleClick = ()=>{
+        console.log("Se ha agregado a Favoritos");
+      }
 
     componentDidMount() {
         fetch(`http://localhost:4200/api/productos/categoria/producto/${this.props.producto_id}`)
@@ -31,6 +37,10 @@ export default class ProductoDetalle extends React.Component {
 
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
                 <div>
+                    <div className="dheader" style={{paddingTop:'50px'}}>
+                    <button type="button" className="btn"  onClick={this.handleClick}><FaRegHeart size='2rem'/></button>
+                    <button type="button" className="btn"  ><FaHeart color='red' size='2rem'/></button>
+                    </div>
                     <img style={{ width: 350, marginTop: 100 }} src={this.state.productos.imgUrl} />
                 </div>
                 <div style={{ marginTop: 100, marginRight: 700 }}>
@@ -42,7 +52,7 @@ export default class ProductoDetalle extends React.Component {
                         <li className="list-group-item">Precio: ${this.state.productos.precio}</li>
                         <li className="list-group-item">Forma de pago: {this.state.productos.pago}</li>
                     </ul>
-                    <a target="_blank" href={this.state.init_point}>Compra</a>
+                    <a target="_blank_" href={this.state.init_point}><button type="button">Comprar</button></a>
                 </div>
 
             </div>
