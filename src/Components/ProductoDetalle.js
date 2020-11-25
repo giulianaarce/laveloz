@@ -17,7 +17,7 @@ export default class ProductoDetalle extends React.Component {
                 console.log(this.state.productos)
             })
 
-        fetch('http://localhost:4200/api/mercadopago')
+        fetch(`http://localhost:4200/api/mercadopago/${this.props.producto_id}`)
         .then((res)=>{return res.json()})
         .then((json)=>{
             console.log("init", json)
@@ -42,10 +42,10 @@ export default class ProductoDetalle extends React.Component {
                         <li className="list-group-item">Precio: ${this.state.productos.precio}</li>
                         <li className="list-group-item">Forma de pago: {this.state.productos.pago}</li>
                     </ul>
-                    <a  href={this.state.init_point}>Compra</a>
+                    <a target="_blank" href={this.state.init_point}>Compra</a>
                 </div>
 
             </div>
         )
-    }
+    }   
 }
