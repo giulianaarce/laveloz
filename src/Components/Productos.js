@@ -10,6 +10,8 @@ export default class Productos extends React.Component {
     console.log("Id", id)
     this.props.id_producto(id)
 }
+
+
   render() {
     return (
       <>

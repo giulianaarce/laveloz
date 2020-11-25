@@ -19,6 +19,7 @@ export default class App extends React.Component {
     super()
     this.state = {
       productos: "",
+      productosOrdenados: "",
       imagenes: "",
       categoria: "",
       textoMarketing: "",
@@ -35,6 +36,10 @@ export default class App extends React.Component {
       .then((json) => {
         this.setState({ productos: json })
         console.log(this.state.productos)
+        const orden = this.state.productos.sort((a, b)=>{
+          return (a.precio - b.precio)
+        })
+        this.setState({productosOrdenados: orden})
       })
     //Imagenes del carrusel
     fetch("http://localhost:4200/api/images")
@@ -154,7 +159,7 @@ export default class App extends React.Component {
           <NavBar />
           <Switch>
             <Route path="/home"><Home images={this.state.imagenes || []} textoM={this.state.textoMarketing || []} productosFav={this.state.productosFav || []} novedadesEmail={this.novedadesEmail} categorias={this.state.categorias || []} categ={this.categorias} /></Route>
-            <Route path="/productos"><Productos productos={this.state.productos || []} categorias={this.state.categorias || []} id_producto={this.id_producto} categ={this.categorias} /></Route>
+            <Route path="/productos"><Productos productos={this.state.productosOrdenados || []} categorias={this.state.categorias || []} id_producto={this.id_producto} categ={this.categorias} /></Route>
             <Route path="/producto-detalle"><ProductoDetalle producto_id={this.state.producto_id} /></Route>
             <Route path="/nosotros"><Nosotros sucursales={this.state.sucursales || []} enviarContacto={this.enviarContacto} /></Route>
             <Route path="*"><Redirect to="/home"></Redirect></Route>
