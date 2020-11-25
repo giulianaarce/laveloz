@@ -4,7 +4,8 @@ export default class ProductoDetalle extends React.Component {
     constructor() {
         super()
         this.state = {
-            productos: ""
+            productos: "",
+            init_point:""
         }
     }
 
@@ -15,6 +16,14 @@ export default class ProductoDetalle extends React.Component {
                 this.setState({ productos: json })
                 console.log(this.state.productos)
             })
+
+        fetch('http://localhost:4200/api/mercadopago')
+        .then((res)=>{return res.json()})
+        .then((json)=>{
+            console.log("init", json)
+            this.setState({init_point:json.init_point})
+            console.log("init_point", this.state.init_point)
+        })
     }
 
     render() {
@@ -33,7 +42,7 @@ export default class ProductoDetalle extends React.Component {
                         <li className="list-group-item">Precio: ${this.state.productos.precio}</li>
                         <li className="list-group-item">Forma de pago: {this.state.productos.pago}</li>
                     </ul>
-                    <button type="button" class="btn btn-primary">Compra</button>
+                    <a  href={this.state.init_point}>Compra</a>
                 </div>
 
             </div>
